@@ -84,13 +84,21 @@ const LOCAL_DB_MANAGER = 'http://localhost:3007';
 const REMOTE_DB_MANAGER = 'https://db-manager-1.onrender.com';
 
 function getDbManagerUrl() {
+  // If USE_REMOTE_DB is true, use remote directly
+  if (process.env.USE_REMOTE_DB === 'true') {
+    return REMOTE_DB_MANAGER;
+  }
   // Try local first, fallback to remote
   return process.env.DB_MANAGER || LOCAL_DB_MANAGER;
 }
 
 let DB_MANAGER_URL = getDbManagerUrl();
-// Test local, fallback to remote if not available
+// Test local, fallback to remote if not available (unless USE_REMOTE_DB is true)
 async function ensureDbManagerUrl() {
+  if (process.env.USE_REMOTE_DB === 'true') {
+    DB_MANAGER_URL = REMOTE_DB_MANAGER;
+    return REMOTE_DB_MANAGER;
+  }
   try {
     await axios.get(LOCAL_DB_MANAGER + '/health', { timeout: 2000 });
     DB_MANAGER_URL = LOCAL_DB_MANAGER;
