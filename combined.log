@@ -1,0 +1,25 @@
+{"level":"info","message":"✅ Big Server (Port 3000) is connected","timestamp":"2026-04-11T07:50:22.920Z"}
+{"level":"warn","message":"❌ DB Manager (Port 3007) connection error: Request failed with status code 429","timestamp":"2026-04-11T07:50:28.384Z"}
+{"level":"info","message":"✅ Stage5: WebSocket connection established with DB Manager","timestamp":"2026-04-11T07:50:29.463Z"}
+{"level":"info","message":"✅ Big Server (Port 3000) is connected","timestamp":"2026-04-11T07:50:58.795Z"}
+{"level":"warn","message":"❌ DB Manager (Port 3007) connection error: Request failed with status code 429","timestamp":"2026-04-11T07:51:04.440Z"}
+{"level":"info","message":"✅ Big Server (Port 3000) is connected","timestamp":"2026-04-11T08:19:42.439Z"}
+{"level":"info","message":"✅ Big Server (Port 3000) is connected","timestamp":"2026-04-11T08:22:05.940Z"}
+{"level":"info","message":"✅ DB Manager (Port 3007) is connected","timestamp":"2026-04-11T08:22:06.302Z"}
+{"level":"info","message":"✅ Stage5: WebSocket connection established with DB Manager","timestamp":"2026-04-11T08:22:06.432Z"}
+{"level":"info","message":"✅ Big Server (Port 3000) is connected","timestamp":"2026-04-11T08:22:36.723Z"}
+{"level":"info","message":"✅ DB Manager (Port 3007) is connected","timestamp":"2026-04-11T08:22:36.977Z"}
+{"level":"info","message":"✅ Big Server (Port 3000) is connected","timestamp":"2026-04-11T08:23:06.694Z"}
+{"level":"info","message":"✅ DB Manager (Port 3007) is connected","timestamp":"2026-04-11T08:23:06.978Z"}
+{"level":"info","message":"✅ Big Server (Port 3000) is connected","timestamp":"2026-04-11T08:23:36.698Z"}
+{"level":"info","message":"✅ DB Manager (Port 3007) is connected","timestamp":"2026-04-11T08:23:36.998Z"}
+{"level":"info","message":"✅ Big Server (Port 3000) is connected","timestamp":"2026-04-11T08:24:06.749Z"}
+{"level":"info","message":"✅ DB Manager (Port 3007) is connected","timestamp":"2026-04-11T08:24:07.033Z"}
+{"level":"info","message":"✅ Big Server (Port 3000) is connected","timestamp":"2026-04-11T08:24:36.749Z"}
+{"level":"info","message":"✅ DB Manager (Port 3007) is connected","timestamp":"2026-04-11T08:24:37.034Z"}
+{"level":"info","message":"✅ Big Server (Port 3000) is connected","timestamp":"2026-04-11T08:25:06.758Z"}
+{"level":"info","message":"✅ DB Manager (Port 3007) is connected","timestamp":"2026-04-11T08:25:07.160Z"}
+{"level":"info","message":"✅ Big Server (Port 3000) is connected","timestamp":"2026-04-11T08:25:36.747Z"}
+{"level":"warn","message":"❌ DB Manager (Port 3007) connection error: Request failed with status code 429","timestamp":"2026-04-11T08:25:41.565Z"}
+{"level":"warn","message":"❌ Stage5: WebSocket disconnected from DB Manager: transport close","timestamp":"2026-04-11T08:26:04.731Z"}
+{"level":"info","message":"✅ Big Server (Port 3000) is connected","timestamp":"2026-04-11T08:26:09.433Z"}
