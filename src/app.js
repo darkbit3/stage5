@@ -582,15 +582,15 @@ function parseSelectedBoard(selectedBoard) {
         totalPlayers: 0
       };
     }
-
-    console.log('🔍 Stage5: Parsing selectedBoard:', selectedBoard);
-
+    
+    console.log('🔍 Parsing selectedBoard:', selectedBoard);
+    
     // Split by comma to get individual player:board pairs
     const pairs = selectedBoard.split(',');
-
+    
     const playerIds = [];
     const boards = [];
-
+    
     pairs.forEach(pair => {
       if (pair && pair.includes(':')) {
         const parts = pair.split(':');
@@ -598,26 +598,27 @@ function parseSelectedBoard(selectedBoard) {
           // Player ID is the first part, board number is the last part
           const playerId = parts[0].trim();
           const boardNum = parts[parts.length - 1].trim();
-
+          
           if (playerId && boardNum) {
             playerIds.push(playerId);
             boards.push(boardNum);
-            console.log(`✅ Stage5: Parsed: ${playerId} → Board ${boardNum}`);
+            console.log(`✅ Parsed: ${playerId} → Board ${boardNum}`);
           }
         }
       }
     });
-
+    
     const result = {
       playerIds: playerIds.join(','),
       boards: boards.join(','),
       totalPlayers: playerIds.length
     };
-
-    console.log('✅ Stage5: Parse result:', result);
+    
+    console.log('✅ Parse result:', result);
     return result;
+    
   } catch (error) {
-    console.error('❌ Stage5: Error parsing selectedBoard:', error.message);
+    console.error('Error parsing selectedBoard:', error);
     return {
       playerIds: '',
       boards: '',
