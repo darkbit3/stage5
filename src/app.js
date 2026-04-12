@@ -114,6 +114,15 @@ const services = {
   db_manager: { url: DB_MANAGER_URL, name: 'DB Manager', connected: false }
 };
 
+const {
+  getRoomCountdown,
+  resetRoomCountdown,
+  decrementCountdowns,
+  setRoomCountdown,
+  getAllCountdowns,
+  DEFAULT_COUNTDOWN_SECONDS
+} = require('./countdownManager');
+
 const BIGSERVER_URL = services.bigserver.url;
 
 // WebSocket client for real-time connection to DB Manager
@@ -685,6 +694,38 @@ async function createNewGameForStage(stage) {
 }
 
 
+// Room countdown endpoint
+app.get('/api/v1/room-countdown', (req, res) => {
+  try {
+    const room = req.query.room;
+    
+    if (!room || (room !== '1' && room !== '2')) {
+      return res.status(400).json({
+        success: false,
+        error: 'Invalid room parameter. Must be 1 or 2'
+      });
+    }
+
+    const countdownData = getRoomCountdown(room);
+    
+    res.json({
+      success: true,
+      data: {
+        room: parseInt(room),
+        countdown: countdownData.seconds,
+        active: countdownData.active
+      },
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    console.error('Error fetching room countdown:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Internal server error'
+    });
+  }
+});
+
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
@@ -713,6 +754,11 @@ server.listen(PORT, async () => {
 
   // Check connections every 30 seconds
   setInterval(checkServiceConnections, 30000);
+
+  // Decrement countdowns every second
+  setInterval(() => {
+    decrementCountdowns();
+  }, 1000);
 });
 
 module.exports = { app, server, io };
