@@ -33,7 +33,10 @@ function decrementCountdowns() {
     if (state.seconds > 0) {
       state.seconds -= 1;
     } else {
-      state.active = false;
+      // Reset countdown for next game cycle
+      state.seconds = DEFAULT_COUNTDOWN_SECONDS;
+      state.active = true;
+      console.log(`🔄 Countdown reset for room ${room}: ${DEFAULT_COUNTDOWN_SECONDS}s`);
     }
   });
 }
